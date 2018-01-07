@@ -9,9 +9,22 @@
 		<title>TECHONE Engineering | cover all aspects of electrical and mechanical services including the design, installation, maintenance, inspection and testing</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="favicon.png">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<style>
+#captchaText {
+    display:inline; 
+}
+
+#captchaInput {
+  width: 5em;
+  margin-left: .5em;
+  display:inline; 
+  margin-right: 90px;
+}
+</style>		
 	</head>
 	<body>
 
@@ -166,7 +179,7 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact Us</h2>
-								<form action="https://getsimpleform.com/messages?form_api_token=0cbe2293d9aaac78b52abf83a7e6214a" method="post">
+								<form action="https://getsimpleform.com/messages?form_api_token=bf03ed7e99824273d92798b4ae4a63fa" method="post" id="contact">
 									<input type='hidden' name='redirect_to' value='https://techone.ist'>
 									<div class="field half first">
 										<label for="name">Name</label>
@@ -182,8 +195,9 @@
 									</div>
 
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="special" /></li>
-										<li><input type="reset" value="Reset" /></li>
+									    <li><div class="field g-recaptcha" data-sitekey="6Ld-rD8UAAAAAAahq01XaKcu-dHr5PPWkNxXyqPA" data-callback="enableBtn" data-theme="dark"></div></li>
+										<li style=" height: 70px;"><span><input type="submit" value="Send Message" class="special" id="submit_button"/></span></li>
+										<!--li><input type="reset" value="Reset" /></li-->
 									</ul>
 								</form>
 
@@ -452,7 +466,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
+		<style>
+#captchaInput {
+  width: 2.5em;
+  margin-left: .5em;
+}
+</style>			<footer id="footer">
 						<p class="copyright">&copy; TECHONE. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
@@ -467,6 +486,19 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script src="https://www.google.com/recaptcha/api.js?hl=tr" async defer></script>
+
+		<script type="text/javascript">
+		  $(document).ready(function() {      
+		    document.getElementById("submit_button").disabled = true;
+		  });
+
+		  function enableBtn(){
+		    //alert("callback working");
+		    $('#submit_button').prop("disabled", false);        
+		  }
+		</script>			
+
 		<!--Start of Tawk.to Script-->
 		<script type="text/javascript">
 		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -480,5 +512,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		})();
 		</script>
 		<!--End of Tawk.to Script-->
+
 	</body>
 </html>
